@@ -13,5 +13,5 @@ Script takes the following parameters:
 
 Reporting:
 -Status keywords are the following:
-	COPYPASTE_SUCCESS: File was successfully unzipped
-	COPYPASTE_FAIL: File specified does not exist in the archive
+	COPYPASTE_SUCCESS: File was successfully copy/pasted/overwritten
+	COPYPASTE_FAIL: File specified does not exist
