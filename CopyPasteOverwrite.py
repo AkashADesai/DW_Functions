@@ -36,13 +36,13 @@ Reporting:
 # destPath = args.destPath
 # pathsToMove = args.pathsToMove
 
-srcPath = r'/Users/akashdesai/Akash_DW/mastercode/Pythonscripts/test_source'
-destPath = r'/Users/akashdesai/Akash_DW/mastercode/Pythonscripts/test_destination'
+# srcPath = r'/Users/akashdesai/Akash_DW/mastercode/Pythonscripts/test_source'
+# destPath = r'/Users/akashdesai/Akash_DW/mastercode/Pythonscripts/test_destination'
 # pathsToMove = ["test1.txt", "test1.txt"]
 # pathsToMove = ["test1.txt", "test2.txt", "garbage.txt"]
 # pathsToMove = ["test1.txt"]
 # pathsToMove = ["garbage"]
-pathsToMove = []
+# pathsToMove = []
 
 pathsMovedSucc = []
 paths_not_found = []
