@@ -18,11 +18,10 @@ Script takes the following parameters:
 
 Reporting:
 -Status keywords are the following:
-	COPYPASTE_SUCCESS: File was successfully unzipped
-	COPYPASTE_FAIL: File specified does not exist in the archive
+	COPYPASTE_SUCCESS: File was successfully copy/pasted/overwritten
+	COPYPASTE_FAIL: File specified does not exist
 
--If R does not find any of these keywords on the last line of STDOUT
-	from the script, it will assume failure and ABORT CANCEL
+-Eventually toss into an R dataset
 
 """
 
