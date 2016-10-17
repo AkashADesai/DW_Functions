@@ -15,3 +15,14 @@ Reporting:
 -Status keywords are the following:
 	COPYPASTE_SUCCESS: File was successfully copy/pasted/overwritten
 	COPYPASTE_FAIL: File specified does not exist
+
+
+2) Create_GlacierVault.py
+Script takes the following parameter:
+- String for new vault name
+
+	A request for a new vault with inputted name is sent to AWS Glacier.
+	Credentials stored on user root are used (IAM must be properly configured)
+
+Reporting:
+- Script will print one line with response from AWS Glacier
