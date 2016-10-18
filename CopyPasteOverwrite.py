@@ -24,28 +24,22 @@ Reporting:
 -Eventually toss into an R dataset
 
 """
+### Grab arguments from command line
+argparser = argparse.ArgumentParser()
+argparser.add_argument("srcPath")
+argparser.add_argument("destPath")
+argparser.add_argument("pathsToMove", nargs="*")
+args = argparser.parse_args()
 
-# argparser = argparse.ArgumentParser()
-# argparser.add_argument("srcPath")
-# argparser.add_argument("destPath")
-# argparser.add_argument("pathsToMove", nargs="*")
-# args = argparser.parse_args()
+srcPath = args.srcPath
+destPath = args.destPath
+pathsToMove = args.pathsToMove
 
-# srcPath = args.srcPath
-# destPath = args.destPath
-# pathsToMove = args.pathsToMove
-
-srcPath = r'/Users/akashdesai/Akash_DW/mastercode/Pythonscripts/test_source'
-destPath = r'/Users/akashdesai/Akash_DW/mastercode/Pythonscripts/test_destination'
-# pathsToMove = ["test1.txt", "test1.txt"]
-# pathsToMove = ["test1.txt", "test2.txt", "garbage.txt"]
-# pathsToMove = ["test1.txt"]
-# pathsToMove = ["garbage"]
-pathsToMove = []
-
+### Create paths succeed and fail lists, for additional reporting.
 pathsMovedSucc = []
 paths_not_found = []
 
+### Directories
 if len(pathsToMove) == 0:
 	print(" *\* CopyPaste or Overwrite Directory */* ")
 	print()
@@ -59,22 +53,44 @@ if len(pathsToMove) == 0:
 		print("COPYPASTE_FAIL: {}".format(srcPath))
 		quit()
 
+### Files
 else:
 	print(" *\* CopyPaste or Overwrite Files */* ")
 	print()
 
-	for path in pathsToMove:
+## If dest path already exists
+	if os.path.exists(destPath) is True:
+		for path in pathsToMove:
 
-		file_path = os.path.join(srcPath, path)
-		dest_path = os.path.join(destPath, path)
+			file_path = os.path.join(srcPath, path)
+			dest_path = os.path.join(destPath, path)
 
-		if os.path.exists(os.path.join(srcPath,path)) is True:
-			print("COPYPASTE_SUCCESS: {}".format(dest_path))
-			print()
-			pathsMovedSucc.append(path)
-			shutil.copy(file_path,dest_path)
+			if os.path.exists(os.path.join(srcPath,path)) is True:
+				print("COPYPASTE_SUCCESS: {}".format(dest_path))
+				print()
+				pathsMovedSucc.append(path)
+				shutil.copy(file_path,dest_path)
 
-		else:
-			print("COPYPASTE_FAIL: {}".format(path))
-			print()
-			paths_not_found.append(path)
+			else:
+				print("COPYPASTE_FAIL: {}".format(path))
+				print()
+				paths_not_found.append(path)
+
+## If dest path does not already exist
+	else:
+		os.mkdir(destPath)
+		for path in pathsToMove:
+
+			file_path = os.path.join(srcPath, path)
+			dest_path = os.path.join(destPath, path)
+
+			if os.path.exists(os.path.join(srcPath,path)) is True:
+				print("COPYPASTE_SUCCESS: {}".format(dest_path))
+				print()
+				pathsMovedSucc.append(path)
+				shutil.copy(file_path,dest_path)
+
+			else:
+				print("COPYPASTE_FAIL: {}".format(path))
+				print()
+				paths_not_found.append(path)
