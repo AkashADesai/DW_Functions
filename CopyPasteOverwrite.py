@@ -21,8 +21,6 @@ Reporting:
 	COPYPASTE_SUCCESS: File was successfully copy/pasted/overwritten
 	COPYPASTE_FAIL: File specified does not exist
 
--Eventually toss into an R dataset
-
 """
 ### Grab arguments from command line
 argparser = argparse.ArgumentParser()
