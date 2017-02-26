@@ -1,5 +1,5 @@
 # DW_Functions
-DataWarehousing Fuctions
+DataWarehousing Functions
 
 1) CopyPasteOverwrite.py
 Script takes the following parameters:
