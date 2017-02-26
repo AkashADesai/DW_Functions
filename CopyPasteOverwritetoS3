@@ -1,9 +1,0 @@
-###Code to upload files to S3
-### IAM must be setup to allow correct writing privileges to S3
-### Be sure that credentials are downloaded to local root
-
-import argparse
-import boto
-import boto.s3
-
-from boto.s3.key import Key
